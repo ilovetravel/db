@@ -197,9 +197,15 @@ func (s *Source) Collection(names ...string) (db.Collection, error) {
 	col.parent = s
 	col.collection = s.database.C(name)
 
-	if col.Exists() == false {
-		err = db.ErrCollectionDoesNotExist
-	}
+	// checking for the existence of a collection is a fairly slow operation
+	// and the way our project works, we call this method a lot, so it
+	// doesn't make sense to check for its existence all the time.
+	// this is actually removed in upper.io/db.v2 but we don't want to change
+	// over to this new version so late before release (and actually we are
+	// thinking of just dumping upper.io/db entirely. 
+	// if col.Exists() == false {
+	// 	err = db.ErrCollectionDoesNotExist
+	// }
 
 	return col, err
 }
