@@ -52,7 +52,7 @@ type chunks struct {
 
 func (self *Collection) Refresh() {
 	log.WithFields(log.Fields{"file": "upper.io", "tag": "db"}).Warn("Refreshing database connection")
-	self.parent.database.Refresh()
+	self.parent.session.Refresh()
 }
 
 func (self *Collection) Find(terms ...interface{}) db.Result {
