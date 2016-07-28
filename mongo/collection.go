@@ -23,6 +23,7 @@ package mongo
 
 import (
 	"fmt"
+	log "github.com/Sirupsen/logrus"
 	"strings"
 	"sync"
 
@@ -47,6 +48,11 @@ type chunks struct {
 	Sort       []string
 	Conditions interface{}
 	GroupBy    []interface{}
+}
+
+func (self *Collection) Refresh() {
+	log.WithFields(log.Fields{"file": "upper.io", "tag": "db"}).Warn("Refreshing database connection")
+	self.parent.database.Refresh()
 }
 
 func (self *Collection) Find(terms ...interface{}) db.Result {

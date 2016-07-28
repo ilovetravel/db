@@ -26,6 +26,7 @@ package mongo
 import (
 	"errors"
 	"fmt"
+	log "github.com/Sirupsen/logrus"
 
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
@@ -49,9 +50,15 @@ func (self *Result) setCursor() error {
 		if err != nil {
 			return err
 		}
+
 		self.iter = q.Iter()
+		if self.iter.Err() != nil {
+			log.WithFields(log.Fields{"file": "upper.io", "tag": "db"}).Error(self.iter.Err().Error())
+			self.c.Refresh()
+			self.iter = q.Iter()
+		}
 	}
-	return nil
+	return self.iter.Err()
 }
 
 func (self *Result) Where(terms ...interface{}) db.Result {
@@ -160,12 +167,13 @@ func (self *Result) Next(dst interface{}) error {
 
 // Removes the matching items from the collection.
 func (self *Result) Remove() error {
-	var err error
-	_, err = self.c.collection.RemoveAll(self.queryChunks.Conditions)
+	_, err := self.c.collection.RemoveAll(self.queryChunks.Conditions)
 	if err != nil {
-		return err
+		log.WithFields(log.Fields{"file": "upper.io", "tag": "db"}).Error(err.Error())
+		self.c.Refresh()
+		_, err = self.c.collection.RemoveAll(self.queryChunks.Conditions)
 	}
-	return nil
+	return err
 }
 
 // Closes the result set.
@@ -181,12 +189,14 @@ func (self *Result) Close() error {
 // Updates matching items from the collection with values of the given map or
 // struct.
 func (self *Result) Update(src interface{}) error {
-	var err error
-	_, err = self.c.collection.UpdateAll(self.queryChunks.Conditions, map[string]interface{}{"$set": src})
+	_, err := self.c.collection.UpdateAll(self.queryChunks.Conditions, map[string]interface{}{"$set": src})
 	if err != nil {
-		return err
+		log.WithFields(log.Fields{"file": "upper.io", "tag": "db"}).Error(err.Error())
+		self.c.Refresh()
+		_, err = self.c.collection.UpdateAll(self.queryChunks.Conditions, map[string]interface{}{"$set": src})
 	}
-	return nil
+
+	return err
 }
 
 func (self *Result) query() (*mgo.Query, error) {
@@ -228,5 +238,10 @@ func (self *Result) query() (*mgo.Query, error) {
 func (self *Result) Count() (uint64, error) {
 	q := self.c.collection.Find(self.queryChunks.Conditions)
 	total, err := q.Count()
+	if err != nil {
+		log.WithFields(log.Fields{"file": "upper.io", "tag": "db"}).Error(err.Error())
+		self.c.Refresh()
+		total, err = q.Count()
+	}
 	return uint64(total), err
 }
