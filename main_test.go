@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2016 The upper.io/db.v1 authors. All rights reserved.
+// Copyright (c) 2012-2016 The github.com/ilovetravel/upperiodb authors. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining
 // a copy of this software and associated documentation files (the
@@ -33,14 +33,14 @@ import (
 
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
-	"upper.io/db.v1"
-	_ "upper.io/db.v1/mongo"
-	_ "upper.io/db.v1/mysql"
-	_ "upper.io/db.v1/postgresql"
+	"github.com/ilovetravel/upperiodb"
+	_ "github.com/ilovetravel/upperiodb/mongo"
+	_ "github.com/ilovetravel/upperiodb/mysql"
+	_ "github.com/ilovetravel/upperiodb/postgresql"
 	// Temporary removing QL. It includes a _solaris.go file that produces
 	// compile time errors on < go1.3.
-	// _ "upper.io/db.v1/ql"
-	_ "upper.io/db.v1/sqlite"
+	// _ "github.com/ilovetravel/upperiodb/ql"
+	_ "github.com/ilovetravel/upperiodb/sqlite"
 )
 
 var wrappers = []string{

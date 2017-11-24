@@ -1,4 +1,4 @@
-# upper.io/db.v1
+# github.com/ilovetravel/upperiodb
 
 <center>
 <img src="https://upper.io/images/icon.svg" width="256" />
@@ -8,14 +8,14 @@
 
 ## The `db` package
 
-![Upper.io](https://upper.io/db.v1/res/general.png)
+![Upper.io](https://github.com/ilovetravel/upperiodb/res/general.png)
 
-`upper.io/db.v1` is a [Go][2] package that allows developers to communicate
+`github.com/ilovetravel/upperiodb` is a [Go][2] package that allows developers to communicate
 with different databases through the use of *adapters* that wrap well-supported
 database drivers.
 
 ```
-go get -u upper.io/db.v1
+go get -u github.com/ilovetravel/upperiodb
 ```
 
 ## Is `db` an ORM?
@@ -33,32 +33,32 @@ res = col.Find(db.Cond{"name": "Max"}).Limit(10).Sort("-last_name")
 err = res.All(&people)
 ```
 
-In strict sense `upper.io/db.v1` could be considered a non-opinionated ORM that
+In strict sense `github.com/ilovetravel/upperiodb` could be considered a non-opinionated ORM that
 rather stays out of the way.
 
 ## Supported databases
 
-![Adapters](https://upper.io/db.v1/res/adapters.png)
+![Adapters](https://github.com/ilovetravel/upperiodb/res/adapters.png)
 
-`upper.io/db.v1` attempts to provide full compatiblity for [CRUD][2] operations
+`github.com/ilovetravel/upperiodb` attempts to provide full compatiblity for [CRUD][2] operations
 across adapters. Some other operations (such *transactions*) are supported only
 on specific database adapters, such as MySQL, PostgreSQL and SQLite.
 
-* [MongoDB](https://upper.io/db.v1/mongo) via [mgo](http://godoc.org/labix.org/v2/mgo)
-* [MySQL](https://upper.io/db.v1/mysql) via [mysql](https://github.com/go-sql-driver/mysql)
-* [PostgreSQL](https://upper.io/db.v1/postgresql) via [pq](https://github.com/lib/pq)
-* [QL](https://upper.io/db.v1/ql) via [ql](https://github.com/cznic/ql)
-* [SQLite3](https://upper.io/db.v1/sqlite) via [go-sqlite3](https://github.com/mattn/go-sqlite3)
+* [MongoDB](https://github.com/ilovetravel/upperiodb/mongo) via [mgo](http://godoc.org/labix.org/v2/mgo)
+* [MySQL](https://github.com/ilovetravel/upperiodb/mysql) via [mysql](https://github.com/go-sql-driver/mysql)
+* [PostgreSQL](https://github.com/ilovetravel/upperiodb/postgresql) via [pq](https://github.com/lib/pq)
+* [QL](https://github.com/ilovetravel/upperiodb/ql) via [ql](https://github.com/cznic/ql)
+* [SQLite3](https://github.com/ilovetravel/upperiodb/sqlite) via [go-sqlite3](https://github.com/mattn/go-sqlite3)
 
 ## User documentation
 
-See the project page, recipes and user documentation at [upper.io/db.v1][1].
+See the project page, recipes and user documentation at [github.com/ilovetravel/upperiodb][1].
 
 ## License
 
 This project is licensed under the terms of the **MIT License**.
 
-> Copyright (c) 2012-2016 The upper.io/db.v1 authors. All rights reserved.
+> Copyright (c) 2012-2016 The github.com/ilovetravel/upperiodb authors. All rights reserved.
 >
 > Permission is hereby granted, free of charge, to any person obtaining
 > a copy of this software and associated documentation files (the
@@ -84,6 +84,6 @@ This project is licensed under the terms of the **MIT License**.
 * [José Carlos Nieto](https://github.com/xiam)
 * [Peter Kieltyka](https://github.com/pkieltyka)
 
-[1]: https://upper.io/db.v1
+[1]: https://github.com/ilovetravel/upperiodb
 [2]: http://golang.org
 [3]: http://en.wikipedia.org/wiki/Create,_read,_update_and_delete

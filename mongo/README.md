@@ -1,6 +1,6 @@
-# MongoDB adapter for upper.io/db.v1
+# MongoDB adapter for github.com/ilovetravel/upperiodb
 
 Please read the full docs, acknowledgements and examples at
-[https://upper.io/db.v1/wrappers/mongo][1].
+[https://github.com/ilovetravel/upperiodb/wrappers/mongo][1].
 
-[1]: https://upper.io/db.v1/wrappers/mongo
+[1]: https://github.com/ilovetravel/upperiodb/wrappers/mongo

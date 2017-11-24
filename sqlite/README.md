@@ -1,6 +1,6 @@
-# SQLite3 adapter for upper.io/db.v1
+# SQLite3 adapter for github.com/ilovetravel/upperiodb
 
 Please read the full docs, acknowledgements and examples at
-[https://upper.io/db.v1/sqlite][1]
+[https://github.com/ilovetravel/upperiodb/sqlite][1]
 
-[1]: https://upper.io/db.v1/sqlite
+[1]: https://github.com/ilovetravel/upperiodb/sqlite

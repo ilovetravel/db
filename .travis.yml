@@ -16,8 +16,8 @@ install:
   - sudo apt-get install bzr
   - rm -rf $HOME/gopath/src/upper.io
   - mkdir -p $HOME/gopath/src/upper.io
-  - rsync -az $TRAVIS_BUILD_DIR/ $HOME/gopath/src/upper.io/db.v1/
-  - export TRAVIS_BUILD_DIR=$HOME/gopath/src/upper.io/db.v1
+  - rsync -az $TRAVIS_BUILD_DIR/ $HOME/gopath/src/github.com/ilovetravel/upperiodb/
+  - export TRAVIS_BUILD_DIR=$HOME/gopath/src/github.com/ilovetravel/upperiodb
   - cd $TRAVIS_BUILD_DIR
   - go get -v github.com/cznic/ql/ql
   - go get ./...
@@ -33,11 +33,11 @@ before_script:
   - make -C sqlite/_dumps
 
 script:
-  - cd $HOME/gopath/src/upper.io/db.v1
+  - cd $HOME/gopath/src/github.com/ilovetravel/upperiodb
   - go version
   - go test -v -host 127.0.0.1
-  - go test -v -host 127.0.0.1 upper.io/db.v1/postgresql
-  - go test -v -host 127.0.0.1 upper.io/db.v1/mysql
-  - go test -v -host 127.0.0.1 upper.io/db.v1/mongo
-  - go test -v upper.io/db.v1/ql
-  - go test -v upper.io/db.v1/sqlite
+  - go test -v -host 127.0.0.1 github.com/ilovetravel/upperiodb/postgresql
+  - go test -v -host 127.0.0.1 github.com/ilovetravel/upperiodb/mysql
+  - go test -v -host 127.0.0.1 github.com/ilovetravel/upperiodb/mongo
+  - go test -v github.com/ilovetravel/upperiodb/ql
+  - go test -v github.com/ilovetravel/upperiodb/sqlite
