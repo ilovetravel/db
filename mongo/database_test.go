@@ -35,7 +35,7 @@ import (
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 	"menteslibres.net/gosexy/to"
-	"upper.io/db.v1"
+	"github.com/ilovetravel/upperiodb"
 )
 
 // Wrapper settings.

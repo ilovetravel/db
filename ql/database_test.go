@@ -40,8 +40,8 @@ import (
 	"testing"
 	"time"
 
-	"upper.io/db.v1"
-	"upper.io/db.v1/util/sqlutil"
+	"github.com/ilovetravel/upperiodb"
+	"github.com/ilovetravel/upperiodb/util/sqlutil"
 )
 
 const (

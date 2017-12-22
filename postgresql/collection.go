@@ -29,9 +29,9 @@ import (
 	"time"
 
 	"menteslibres.net/gosexy/to"
-	"upper.io/db.v1"
-	"upper.io/db.v1/util/sqlgen"
-	"upper.io/db.v1/util/sqlutil"
+	"github.com/ilovetravel/upperiodb"
+	"github.com/ilovetravel/upperiodb/util/sqlgen"
+	"github.com/ilovetravel/upperiodb/util/sqlutil"
 )
 
 const defaultOperator = `=`

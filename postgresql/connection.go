@@ -28,7 +28,7 @@ import (
 	"unicode"
 
 	"github.com/xiam/gopostgresql"
-	"upper.io/db.v1"
+	"github.com/ilovetravel/upperiodb"
 )
 
 // scanner implements a tokenizer for libpq-style option strings.

@@ -24,7 +24,7 @@ package mongo
 import (
 	"testing"
 
-	"upper.io/db.v1"
+	"github.com/ilovetravel/upperiodb"
 )
 
 func TestConnectionURL(t *testing.T) {

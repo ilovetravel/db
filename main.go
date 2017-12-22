@@ -22,19 +22,19 @@
 // Package db provides a single interface for interacting with different data
 // sources through the use of adapters that wrap well-known database drivers.
 //
-// As of today, `upper.io/db.v1` fully supports MySQL, PostgreSQL and SQLite (CRUD
+// As of today, `github.com/ilovetravel/upperiodb` fully supports MySQL, PostgreSQL and SQLite (CRUD
 // + Transactions) and provides partial support for MongoDB and QL (CRUD only).
 //
 // Usage:
 //
 // 	import(
 //		// Main package.
-// 		"upper.io/db.v1"
+// 		"github.com/ilovetravel/upperiodb"
 //		// PostgreSQL adapter.
-// 		"upper.io/db.v1/postgresql"
+// 		"github.com/ilovetravel/upperiodb/postgresql"
 // 	)
 //
-// `upper.io/db.v1` is not an ORM and thus does not impose any hard restrictions
+// `github.com/ilovetravel/upperiodb` is not an ORM and thus does not impose any hard restrictions
 // on data structures:
 //
 //	// This code works the same for all supported databases.

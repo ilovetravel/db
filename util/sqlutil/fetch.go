@@ -26,8 +26,8 @@ import (
 	"reflect"
 
 	"menteslibres.net/gosexy/to"
-	"upper.io/db.v1"
-	"upper.io/db.v1/util"
+	"github.com/ilovetravel/upperiodb"
+	"github.com/ilovetravel/upperiodb/util"
 )
 
 // FetchRow receives a *sql.Rows value and tries to map all the rows into a

@@ -29,7 +29,7 @@ import (
 	"time"
 
 	"gopkg.in/mgo.v2"
-	"upper.io/db.v1"
+	"github.com/ilovetravel/upperiodb"
 )
 
 const Adapter = `mongo`

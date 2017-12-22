@@ -27,8 +27,8 @@ import (
 	"regexp"
 
 	"menteslibres.net/gosexy/to"
-	"upper.io/db.v1"
-	"upper.io/db.v1/util"
+	"github.com/ilovetravel/upperiodb"
+	"github.com/ilovetravel/upperiodb/util"
 )
 
 var (

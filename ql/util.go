@@ -26,8 +26,8 @@ import (
 	"reflect"
 
 	"menteslibres.net/gosexy/to"
-	"upper.io/db.v1"
-	"upper.io/db.v1/util"
+	"github.com/ilovetravel/upperiodb"
+	"github.com/ilovetravel/upperiodb/util"
 )
 
 func (t *table) fetchRow(rows *sql.Rows, dst interface{}) error {

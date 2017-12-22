@@ -26,7 +26,7 @@ import (
 	"net/url"
 	"strings"
 
-	"upper.io/db.v1"
+	"github.com/ilovetravel/upperiodb"
 )
 
 const defaultPort = 3306

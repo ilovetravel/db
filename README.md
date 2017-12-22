@@ -1,21 +1,19 @@
-# upper.io/db.v1
+# github.com/ilovetravel/upperiodb
 
 <center>
 <img src="https://upper.io/images/icon.svg" width="256" />
 </center>
 
-[![Build Status](https://travis-ci.org/upper/db.svg?branch=v1)](https://travis-ci.org/upper/db)
-
 ## The `db` package
 
 ![Upper.io](https://upper.io/db.v1/res/general.png)
 
-`upper.io/db.v1` is a [Go][2] package that allows developers to communicate
+`github.com/ilovetravel/upperiodb` is a [Go][2] package that allows developers to communicate
 with different databases through the use of *adapters* that wrap well-supported
 database drivers.
 
 ```
-go get -u upper.io/db.v1
+go get -u github.com/ilovetravel/upperiodb
 ```
 
 ## Is `db` an ORM?
@@ -33,14 +31,14 @@ res = col.Find(db.Cond{"name": "Max"}).Limit(10).Sort("-last_name")
 err = res.All(&people)
 ```
 
-In strict sense `upper.io/db.v1` could be considered a non-opinionated ORM that
+In strict sense `github.com/ilovetravel/upperiodb` could be considered a non-opinionated ORM that
 rather stays out of the way.
 
 ## Supported databases
 
 ![Adapters](https://upper.io/db.v1/res/adapters.png)
 
-`upper.io/db.v1` attempts to provide full compatiblity for [CRUD][2] operations
+`github.com/ilovetravel/upperiodb` attempts to provide full compatiblity for [CRUD][2] operations
 across adapters. Some other operations (such *transactions*) are supported only
 on specific database adapters, such as MySQL, PostgreSQL and SQLite.
 
